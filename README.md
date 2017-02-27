@@ -10,9 +10,10 @@ http://pieroxy.net/blog/pages/lz-string/index.html
 
 Example
 -------
-::
 
-  >>> from lzstring import LZString
-  >>> string = "This is my compression test"
-  >>> compressed = LZString.compressToBase64(string)
-  >>> LZString.decompressFromBase64(compressed)
+```python
+>>> from lzstring import LZString
+>>> string = "This is my compression test"
+>>> compressed = LZString.compressToBase64(string)
+>>> LZString.decompressFromBase64(compressed)
+```
