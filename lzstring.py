@@ -21,8 +21,8 @@ class Object(object):
 def getBaseValue(alphabet, character):
     if alphabet not in baseReverseDic:
         baseReverseDic[alphabet] = {}
-    for i in range(len(alphabet)):
-        baseReverseDic[alphabet][alphabet[i]] = i
+        for index, i in enumerate(alphabet):
+            baseReverseDic[alphabet][i] = index
     return baseReverseDic[alphabet][character]
 
 
@@ -405,7 +405,7 @@ class LZString(object):
             return ""
         if compressed == "":
             return None
-        return _decompress(len(compressed), 16384, lambda index: compressed[index] - 32)
+        return _decompress(len(compressed), 16384, lambda index: ord(compressed[index]) - 32)
 
     @staticmethod
     def decompressFromBase64(compressed):
