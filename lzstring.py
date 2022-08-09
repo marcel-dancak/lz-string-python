@@ -423,3 +423,14 @@ class LZString(object):
             return None
         compressed = compressed.replace(" ", "+")
         return _decompress(len(compressed), 32, lambda index: getBaseValue(keyStrUriSafe, compressed[index]))
+    
+    @staticmethod
+    def decompressFromUint8Array(compressed):
+        length_compressed = len(compressed)//2
+        buf=[]
+        for i in range(length_compressed):
+            buf.append(compressed[i*2]*256+compressed[i*2+1])
+        result=[]
+        for i in buf:
+            result.append(chr(i & 0xffff))
+        return decompress(''.join(result))
