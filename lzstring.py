@@ -5,9 +5,7 @@ terms of the Do What The Fuck You Want To Public License, Version 2,
 as published by Sam Hocevar. See the COPYING file for more details.
 """
 
-from bz2 import decompress
 import math
-from typing_extensions import Self
 
 
 keyStrBase64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/="
